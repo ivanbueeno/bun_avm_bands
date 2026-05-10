@@ -24,14 +24,19 @@ export const creareServer = () => {
                     return engineFetch(req, server);
             }
 
-            return new Response(
-                `<html><body><h1>Hola Mundo</h1></body></html>`,
-                {
-                    headers: { "Content-Type": "text/html; charset=utf-8" }
-                });
+            // return new Response(
+            //     `<html><body><h1>Hola Mundo</h1></body></html>`,
+            //     {
+            //         headers: { "Content-Type": "text/html; charset=utf-8" }
+            //     });
+
+        return new Response(Bun.file("./public/index.html"), {
+            headers: { "Content-Type": "text/html; charset=utf-8" }
+        });
+        
         }
     });
 
     return server;
-    
+
 }
