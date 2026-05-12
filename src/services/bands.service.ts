@@ -10,11 +10,13 @@ class BandsService {
   constructor() {
     this.bandsStore = new BandsStore()
   }
-  
+
   obtinereBands(): Band[] {
     return this.bandsStore.obtinereBands()
   }
+  
   addereBand(nomen: string) {
+
     const novumBand: Band = { 
       id: creatioUuid(),
       nomen,
