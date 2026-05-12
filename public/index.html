@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,25 +9,44 @@
         body {
             background-color: rgb(0, 0, 0, 0.8);
         }
-
         h1 {
-            color: rgb(129,129, 105);
-            font-weight: 500;
-            font-size: 65px;
             font-family: Avenir, Helvetica, Arial, sans-serif;
-            width: 400px;
-            position: absolute;
-            top: 330px;
-            left: 20px;
+            font-weight: 500;
+            color: rgb(129,129, 105);
+            font-size: 65px;
             transform: rotate(-90deg);
+            position: absolute;
+            left: 20px;
+            top: 330px;
             transform-origin: left top;
+            width: 400px;
         }        
-
     </style>
+
 </head>
 
 <body>
+
     <h1>Cliente Web</h1>
+
+
+    <script src="https://cdn.socket.io/4.8.3/socket.io.min.js"></script>
+  
+    <script>
+
+        const socket = io()
+    
+        window.socket = socket
+    
+        socket.on("saludo", (payload) => {
+            console.log("Mensaje del servidor", payload);
+        })
+        
+        socket.on("chat", (message) => {
+            console.log("Mensaje del servidor", message);
+        })
+        
+    </script>
     
 </body>
 </html>
